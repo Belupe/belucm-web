@@ -280,12 +280,6 @@ html { scroll-behavior: smooth; }
   color: #a9c6ff;
 }
 
-.tarjeta:hover .pastilla {
-  border-color: rgba(110, 155, 255, 0.38);
-  background: rgba(59, 114, 232, 0.15);
-  color: #dce7ff;
-}
-
 .pastilla {
   display: inline-block;
   padding: 5px 12px;
@@ -298,11 +292,13 @@ html { scroll-behavior: smooth; }
   transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
 }
 
+/* Solo la etiqueta que esta bajo el raton se tine de azul, una a una. */
 .pastilla:hover {
-  background: rgba(59, 114, 232, 0.42);
-  border-color: rgba(150, 188, 255, 0.75);
+  background: rgba(59, 114, 232, 0.45);
+  border-color: rgba(150, 188, 255, 0.85);
   color: #fff;
   transform: translateY(-1px);
+  box-shadow: 0 4px 14px -4px rgba(59, 114, 232, 0.65);
 }
 
 /* ---------- Habilidades ---------- */
