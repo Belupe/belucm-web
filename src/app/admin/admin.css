@@ -248,3 +248,95 @@
   }
   .admin-nav button { white-space: nowrap; }
 }
+
+/* ---------- Selector visual de iconos ---------- */
+.selector-icono { position: relative; }
+
+.selector-icono-actual {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: var(--radio-s);
+  border: 1px solid var(--borde);
+  background: rgba(8, 12, 24, 0.75);
+  color: var(--texto);
+  cursor: pointer;
+  font-size: 0.92rem;
+  text-align: left;
+}
+
+.selector-icono-actual:hover { border-color: rgba(110, 155, 255, 0.55); }
+.selector-icono-flecha { margin-left: auto; color: var(--texto-tenue); font-size: 0.7rem; }
+
+.selector-icono-panel {
+  margin-top: 8px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 14px;
+  border-radius: var(--radio-s);
+  border: 1px solid var(--borde-fuerte);
+  background: #0c1220;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+.selector-icono-grupo + .selector-icono-grupo { margin-top: 16px; }
+
+.selector-icono-grupo > strong {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texto-tenue);
+  margin-bottom: 8px;
+}
+
+.selector-icono-grupo > p {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+.selector-icono-rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 6px;
+}
+
+.selector-icono-opcion {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--texto-suave);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.selector-icono-opcion:hover {
+  background: rgba(59, 114, 232, 0.25);
+  border-color: rgba(110, 155, 255, 0.6);
+  color: #fff;
+}
+
+.selector-icono-opcion.elegido {
+  background: rgba(59, 114, 232, 0.35);
+  border-color: rgba(150, 188, 255, 0.8);
+  color: #fff;
+}
+
+.selector-icono-subir {
+  display: inline-block;
+  font-size: 0.82rem;
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px dashed var(--borde-fuerte);
+  color: var(--texto-suave);
+  cursor: pointer;
+}
+
+.selector-icono-subir:hover { color: var(--texto); border-color: rgba(110, 155, 255, 0.6); }
+.selector-icono-subir input[type='file'] { display: none; }

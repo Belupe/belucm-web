@@ -6,9 +6,6 @@ import EditorFicha from './EditorFicha';
 import EditorLista from './EditorLista';
 import Mensajes from './Mensajes';
 import Cuenta from './Cuenta';
-import { ICONOS_DISPONIBLES } from '../Icono';
-
-const OPCIONES_ICONO = ICONOS_DISPONIBLES.map((i) => ({ valor: i, texto: i }));
 
 const CAMPOS_PERFIL = [
   { nombre: 'nombre', etiqueta: 'Nombre visible (título grande)', tipo: 'texto' },
@@ -35,7 +32,7 @@ const CAMPOS_SECCION = [
 
 const CAMPOS_RED = [
   { nombre: 'nombre', etiqueta: 'Nombre', tipo: 'texto', ayuda: 'Email, GitHub, Twitch…' },
-  { nombre: 'icono', etiqueta: 'Icono', tipo: 'select', opciones: OPCIONES_ICONO },
+  { nombre: 'icono', etiqueta: 'Icono', tipo: 'icono' },
   { nombre: 'url', etiqueta: 'Enlace', tipo: 'texto', placeholder: 'https://… o mailto:…' },
   {
     nombre: 'valor',
@@ -206,7 +203,7 @@ export default function Panel({ usuario }) {
                 descripcion="Cada categoría es una tarjeta (Lenguajes, Redes, Sistemas…)."
                 campos={[
                   { nombre: 'nombre', etiqueta: 'Nombre', tipo: 'texto' },
-                  { nombre: 'icono', etiqueta: 'Icono', tipo: 'select', opciones: OPCIONES_ICONO },
+                  { nombre: 'icono', etiqueta: 'Icono', tipo: 'icono' },
                   { nombre: 'orden', etiqueta: 'Orden', tipo: 'numero' },
                 ]}
                 etiqueta={(f) => f.nombre || 'Nueva categoría'}
