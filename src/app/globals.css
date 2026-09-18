@@ -620,15 +620,16 @@ html { scroll-behavior: smooth; }
 }
 
 .contacto-dato .icono-chip {
-  width: 44px;
-  height: 44px;
-  border-radius: 11px;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
 }
 
+/* El icono llena el recuadro y conserva el azul de acento */
 .contacto-dato .icono-chip svg {
-  width: 24px;
-  height: 24px;
-  stroke-width: 1.75;
+  width: 27px;
+  height: 27px;
+  stroke-width: 1.8;
 }
 
 .contacto-dato:hover .icono-chip {
@@ -636,9 +637,11 @@ html { scroll-behavior: smooth; }
   color: #a9c6ff;
 }
 
-.contacto-dato span { display: block; font-size: 0.82rem; color: var(--texto-suave); }
-.contacto-dato strong { display: block; font-weight: 600; font-size: 0.97rem; }
-.contacto-dato strong a:hover { color: #8fb4ff; }
+/* Ojo: estas reglas deben apuntar solo al texto, nunca al chip del icono,
+   o le roban el color azul y el centrado. */
+.contacto-dato > div > span { display: block; font-size: 0.82rem; color: var(--texto-suave); }
+.contacto-dato > div > strong { display: block; font-weight: 600; font-size: 0.97rem; }
+.contacto-dato > div > strong a:hover { color: #8fb4ff; }
 
 .contacto-redes { margin-top: 30px; }
 
