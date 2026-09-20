@@ -54,19 +54,6 @@ SELECT * FROM (VALUES
 ) AS v(puesto, empresa, periodo, actual, descripcion, tecnologias, orden)
 WHERE NOT EXISTS (SELECT 1 FROM experiencia);
 
-INSERT INTO proyectos (titulo, resumen, descripcion, video_url, tecnologias, orden, destacado)
-SELECT * FROM (VALUES
-  ('Homelab con Proxmox',
-   'Servidor de virtualización con pool ZFS y varias máquinas virtuales',
-   'Servidor propio con Proxmox VE: máquinas virtuales y contenedores, almacenamiento en un pool ZFS, copias de seguridad programadas y monitorización con Grafana y Prometheus.',
-   '', ARRAY['Proxmox','ZFS','Grafana'], 1, TRUE),
-  ('Red segmentada con UniFi',
-   'Topología con VLANs, agregación de enlaces y red de invitados',
-   'Red doméstica montada con equipamiento UniFi: segmentación en VLANs, agregación de enlaces (LACP) entre switches y una red de invitados aislada del resto.',
-   '', ARRAY['UniFi','VLAN','LACP'], 2, FALSE),
-  ('Inicio de sesión único (SSO)',
-   'Authelia y lldap delante de los servicios publicados',
-   'Un único usuario y contraseña para todos los servicios: Authelia como proveedor de identidad, lldap como directorio y Cloudflare Access controlando quién entra desde fuera.',
-   '', ARRAY['Authelia','lldap','Cloudflare Access'], 3, FALSE)
-) AS v(titulo, resumen, descripcion, video_url, tecnologias, orden, destacado)
-WHERE NOT EXISTS (SELECT 1 FROM proyectos);
+-- Los proyectos reales no se siembran aqui: viven en scripts/proyectos.sql,
+-- que sustituye la tabla entera. Para cargarlos:
+--   psql -h /var/run/postgresql -U belucm -d belucm -f scripts/proyectos.sql

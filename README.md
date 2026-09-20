@@ -29,10 +29,16 @@ La primera vez que arranca, la app crea las tablas ella sola y, si has puesto
 `ADMIN_USER` y `ADMIN_PASSWORD`, crea tambien el usuario del panel. Los cambios
 de esquema posteriores se aplican solos al arrancar (son idempotentes).
 
-Para cargar contenido de ejemplo:
+Para cargar contenido de ejemplo (solo hace algo con las tablas vacias):
 
 ```bash
 psql -h /var/run/postgresql -U belucm -d belucm -f scripts/semilla.sql
+```
+
+Los proyectos reales van aparte, en un script que sustituye la tabla entera:
+
+```bash
+psql -h /var/run/postgresql -U belucm -d belucm -f scripts/proyectos.sql
 ```
 
 ## Variables de entorno (`.env`)
